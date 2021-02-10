@@ -1,5 +1,5 @@
 # Main program
-#
+
 def main():
     print("This program alous you to create your personal strong password based on e.g \"Your Name\" and its easy to remember.")
     while True:
@@ -8,8 +8,12 @@ def main():
         if len(password) < 8:
             print("Your word is too short.")
         else:
-            print("Try this password:", password)
-            break
+            print("Do yoou like this password?:", password)
+            agrement = input("Type \"y\" for YES, or press eny key for NO: ")
+            if agrement == "y":
+                break
+            else:
+                continue
 
 # This function convert list in to string
 
@@ -42,6 +46,8 @@ def generatePassword(password):
             item = "0"
         elif item == "p" or item == "P":
             item = "%"
+        elif item == "h" or item == "H":
+            item = "#"
         elif item.islower():
             item = item.upper()
         elif item.isupper():
