@@ -9,7 +9,6 @@ The program will prompt the user to input a single word or sentence and base on 
 **In this article, you can find information on how to understand password that being created.**
 
 ***When User's input is longer than 11 characters these changes make password shorter, and still easy to remember.***
-- "and" changed in to "&"
 - "for" changed in to "4"
 - "one" changed in to "1"
 - "two" changet in to "2"
