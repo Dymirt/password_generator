@@ -7,6 +7,14 @@ This command-line program allows users to generate passwords based on word.
 The program will prompt the user to input a single word or sentence and base on that input will generate a strong password with a bunch of numbers, special symbols, upper and lower case symbols.
 
 **In this article, you can find information on how to understand password that being created.**
+
+***When User's input is longer than 11 characters these changes make password shorter, and still easy to remember.***
+- "and" changed in to "&"
+- "for" changed in to "4"
+- "one" changed in to "1"
+- "two" changet in to "2"
+
+***Apply to short words or sentences under 8 characters.***
 - "a" and "A" canged in to "@"
 - "e" and "E" canged in to "3"
 - "h" and "H" canged in to "#"
@@ -16,7 +24,6 @@ The program will prompt the user to input a single word or sentence and base on 
 - "p" and "P" canged in to "%"
 - "s" and "S" canged in to "$"
 - All spases is ignored.
-- All upper case symbols are converted to lower case and so on.
 
 How to use it
 1. Run the program
@@ -43,12 +50,4 @@ Much like the advice above not to use sequential letters and numbers, do not use
 
 **Can it be dictionary attacked?**
 
-The key to staving off this type of attack is to ensure the password is not just a single word. Multiple words will confuse this tactic — remember, these attacks reduce the possible number of guesses to the number of words we might use to the exponential power of the number of words we are using,
-
-**The sentence method**
-
-This method is also described as the "Bruce Schneier Method." The idea is to think of a random sentence and transform it into a password using a rule. For example, taking the first two letters of every word in “The Old Duke is my favorite pub in South London” would give you:
-
-- ***ThOlDuismyfapuinSoLo***
-
-To anyone else, it’s gobbledygook, but to you it makes perfect sense. Make sure the sentence you choose is as personal and unguessable as possible.
+The key to staving off this type of attack is to ensure the password is not just a single word. Multiple words will confuse this tactic — remember, these attacks reduce the possible number of guesses to the number of words we might use to the exponential power of the number of words we are using.
