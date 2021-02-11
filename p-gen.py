@@ -22,7 +22,7 @@ def generatePassword(password):
     while i < len(password):
         # When Users input is longer then 11 haracter this changes make password shorter, and still easy to remember.
         if i + 3 <= len(password) and len(password) > 11:
-             if password[i] == "o" and password[i + 1] == "n" and password[i + 2] == "e":
+            if password[i] == "o" and password[i + 1] == "n" and password[i + 2] == "e":
                 change = "1"
                 i += 3
                 new_password.append(change)
