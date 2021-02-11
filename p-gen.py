@@ -2,8 +2,7 @@
 def main():
     print("This program alous you to create your personal strong password based on e.g \"Your Name\" and its easy to remember.")
     while True:
-        password = inToString(generatePassword(
-            input("Create password based on: ")))
+        password = generatePassword(input("Create password based on: "))
         if len(password) < 8:
             print("Your word is too short.")
         else:
@@ -15,16 +14,9 @@ def main():
                 continue
 # End of main program
 
-# This function convert list in to string
-def inToString(l):
-    s = ""
-    for i in l:
-        s += i
-    return s
-
 # This function create pasword based on input
 def generatePassword(password):
-    new_password = [] 
+    new_password = []
     change = None
     i = 0
     while i < len(password):
@@ -43,9 +35,11 @@ def generatePassword(password):
                 i += 3
                 new_password.append(change)
             elif password[i] == "t" and password[i + 1] == "w" and password[i + 2] == "o":
-                change = "4"
+                change = "2"
                 i += 3
                 new_password.append(change)
+        if i >= len(password):
+            break
         # For all other cases
         if password[i] == " ":
             change = ""
@@ -69,7 +63,11 @@ def generatePassword(password):
             change = password[i]
         new_password.append(change)
         i += 1
-    return new_password
+    # Convert list in to string
+    password = ""
+    for i in new_password:
+        password += i
+    return password
 
 
 # Run nain program
