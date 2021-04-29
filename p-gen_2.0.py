@@ -2,16 +2,24 @@ from tkinter import *
 from tkinter.ttk import *
 import subprocess
 
-# Global variables
-
-
-onStart = True
-
 # This function create pasword based on input
 
 
 def generatePassword():
     password = textentry.get()
+    if len(password) < 8:
+        lab.grid_forget()
+        cop.grid_forget()
+        output.set(
+            f"Your password is too short: Only {len(password)} characters.")
+        out.grid()
+    else:
+        strongPassword = short(password)
+        output.set(strongPassword)
+        template()
+
+
+def short(password):
     strongPassword = ""
     for symbol in password:
         if symbol == ' ':
@@ -33,20 +41,15 @@ def generatePassword():
         elif symbol == 'h':
             symbol = '#'
         strongPassword += symbol
-
-    output.set(strongPassword)
-    template()
+    return strongPassword
 
 # Sown output
 
 
 def template():
-    global onStart
-    if onStart:
-        lab.grid()
-        out.grid()
-        cop.grid()
-        onStart = False
+    lab.grid(row=4)
+    out.grid(row=5)
+    cop.grid(row=6)
 
 # Copy button
 
