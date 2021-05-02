@@ -1,6 +1,8 @@
 from tkinter import *
 from tkinter.ttk import *
 import subprocess
+import asyncio
+import time
 
 
 # This function create pasword based on input
@@ -46,9 +48,9 @@ def short(password):
 
 # Sown output
 def template():
-    lab.grid(row=4)
-    out.grid(row=5)
-    cop.grid(row=6)
+    lab.grid(row=5)
+    out.grid(row=6)
+    cop.grid(row=7)
 
 
 # Copy button
