@@ -2,9 +2,8 @@ from tkinter import *
 from tkinter.ttk import *
 import subprocess
 
+
 # This function create pasword based on input
-
-
 def generatePassword():
     password = textentry.get()
     if len(password) < 8:
@@ -19,6 +18,7 @@ def generatePassword():
         template()
 
 
+# Password changer
 def short(password):
     strongPassword = ""
     for symbol in password:
@@ -43,24 +43,21 @@ def short(password):
         strongPassword += symbol
     return strongPassword
 
+
 # Sown output
-
-
 def template():
     lab.grid(row=4)
     out.grid(row=5)
     cop.grid(row=6)
 
+
 # Copy button
-
-
 def copy():
     data = output.get()
     subprocess.run("pbcopy", universal_newlines=True, input=data)
 
+
 # GUI
-
-
 window = Tk()
 window.geometry("400x250")
 window.title("Strong pasword generator")
@@ -69,36 +66,31 @@ header = "This program alous you to create your personal strong password \n base
 varPrompt = "Create password based on: "
 window.configure(background='#ececeb')
 
+
 # Information label
-
-
+Label(window, text="STRONG PASSWORD GENERATOR") .grid()
 Label(window, text=header) .grid()
 Label(window, text=varPrompt) .grid()
 
+
 # Entry field
-
-
 textentry = Entry(window, width=40)
 textentry.grid()
 
+
 # Submit Button
-
-
 Button(window, text="GENERATE PASSWORD",
        width=20, command=generatePassword) .grid()
 
+
 # Output
-
-
 lab = Label(window, text="Your strong password is: ")
 out = Label(window, textvariable=output)
 
+
 # Copy button
-
-
 cop = Button(window, text="COPY", width=5, command=copy,)
 
+
 # Main GUI loop
-
-
 window.mainloop()
